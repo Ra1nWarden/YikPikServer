@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = 80;
+var port = process.env.PORT || 8080;
 var router = express.Router();
 
 router.get('/privacy', function(req, res) {
@@ -12,3 +12,4 @@ router.get('/privacy', function(req, res) {
 
 app.use('/', router);
 app.listen(port);
+console.log('Listening on ' + port);
